@@ -14,20 +14,18 @@ This repository contains practical experiments demonstrating vLLM's capabilities
 
 ```
 vllm-experiments/
+├── pyproject.toml                   # Project dependencies (managed with uv)
 ├── experiments/
 │   ├── config.py                    # Shared configuration
 │   ├── throughput_benchmark/        # HuggingFace vs vLLM comparison
 │   │   ├── benchmark.py
-│   │   ├── requirements.txt
 │   │   └── README.md
 │   ├── openai_api_server/          # OpenAI-compatible API + Streamlit UI
 │   │   ├── server.py
 │   │   ├── ui.py
-│   │   ├── requirements.txt
 │   │   └── README.md
 │   └── quantization_memory/        # AWQ quantization implementation
 │       ├── quantize.py
-│       ├── requirements.txt
 │       └── README.md
 ├── docs/
 │   ├── plots/                       # Benchmark visualizations
