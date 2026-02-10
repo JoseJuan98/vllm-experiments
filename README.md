@@ -44,19 +44,27 @@ vllm-experiments/
 - Python 3.8+
 - CUDA 11.8+ (for GPU acceleration)
 - GPU with compute capability 7.0+ (V100, A100, RTX 3090, etc.)
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer
 
 ### Installation
 
-Each experiment has its own dependencies. Install globally or use virtual environments:
+Install dependencies using uv:
 
 ```bash
-# Create virtual environment
-python -m venv vllm-env
-source vllm-env/bin/activate  # On Windows: vllm-env\Scripts\activate
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Install for specific experiment
-cd experiments/throughput_benchmark
-pip install -r requirements.txt
+# Install all dependencies
+uv pip install -e .
+
+# For quantization experiments, install optional dependencies
+uv pip install -e ".[quantization]"
+```
+
+Alternatively, you can use pip:
+
+```bash
+pip install -e .
 ```
 
 ## 🧪 Experiments

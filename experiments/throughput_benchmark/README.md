@@ -10,8 +10,11 @@ This experiment benchmarks the performance of two popular LLM serving frameworks
 
 ## Requirements
 
+All dependencies are managed in the root `pyproject.toml`. Install with:
+
 ```bash
-pip install vllm transformers torch matplotlib numpy
+# From the repository root
+uv pip install -e .
 ```
 
 ## Usage

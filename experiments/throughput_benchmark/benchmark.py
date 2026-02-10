@@ -23,11 +23,10 @@ try:
     import torch
     from transformers import AutoTokenizer, AutoModelForCausalLM
     from vllm import LLM, SamplingParams
-    import matplotlib.pyplot as plt
-    import numpy as np
+    from matplotlib import pyplot
 except ImportError as e:
     print(f"Missing dependency: {e}")
-    print("Install required packages: pip install vllm transformers torch matplotlib")
+    print("Install required packages: uv pip install -e .")
     sys.exit(1)
 
 
@@ -134,7 +133,7 @@ def plot_results(hf_results: dict, vllm_results: dict, output_path: str):
     """Generate comparison plots."""
     config.ensure_directories()
     
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+    fig, (ax1, ax2) = pyplot.subplots(1, 2, figsize=(14, 6))
     
     # Throughput comparison
     methods = ['Hugging Face', 'vLLM']
@@ -159,8 +158,8 @@ def plot_results(hf_results: dict, vllm_results: dict, output_path: str):
     ax2.text(0, speedup + 0.1, f'{speedup:.2f}x', 
             ha='center', va='bottom', fontweight='bold', fontsize=14)
     
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    pyplot.tight_layout()
+    pyplot.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"\nPlot saved to: {output_path}")
 
 

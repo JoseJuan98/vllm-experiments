@@ -10,8 +10,11 @@ This experiment demonstrates how to deploy a production-ready LLM serving infras
 
 ## Requirements
 
+All dependencies are managed in the root `pyproject.toml`. Install with:
+
 ```bash
-pip install vllm streamlit requests uvicorn
+# From the repository root
+uv pip install -e .
 ```
 
 ## Quick Start

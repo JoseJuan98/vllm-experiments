@@ -11,8 +11,11 @@ This experiment demonstrates memory optimization techniques using quantization:
 
 ## Requirements
 
+All dependencies are managed in the root `pyproject.toml`. Install with optional quantization dependencies:
+
 ```bash
-pip install vllm transformers torch autoawq
+# From the repository root
+uv pip install -e ".[quantization]"
 ```
 
 Note: For AWQ quantization, you need models that are already quantized with AWQ or use AutoAWQ to quantize models.
