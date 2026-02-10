@@ -261,16 +261,19 @@ def main():
         
         ### Python Example
         ```python
-        import openai
+        from openai import OpenAI
         
-        openai.api_base = "{api_url}/v1"
-        openai.api_key = "EMPTY"  # vLLM doesn't require API key
+        # vLLM doesn't require an API key; "EMPTY" is accepted
+        client = OpenAI(
+            base_url="{api_url}/v1",
+            api_key="EMPTY",
+        )
         
-        completion = openai.Completion.create(
+        completion = client.completions.create(
             model="{model_name}",
             prompt="Hello, world!",
             max_tokens={max_tokens},
-            temperature={temperature}
+            temperature={temperature},
         )
         
         print(completion.choices[0].text)
