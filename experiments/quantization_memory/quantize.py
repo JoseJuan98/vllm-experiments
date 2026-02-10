@@ -197,7 +197,7 @@ def main():
     parser.add_argument(
         "--quantization",
         type=str,
-        choices=["awq", "gptq", None],
+        choices=["awq", "gptq"],
         default=None,
         help="Quantization method to use"
     )
