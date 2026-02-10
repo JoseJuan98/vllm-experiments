@@ -1,0 +1,22 @@
+{
+  "title": "Sample Throughput Benchmark Results",
+  "model": "facebook/opt-125m",
+  "date": "2026-02-10",
+  "huggingface": {
+    "time": 45.23,
+    "throughput": 285.67,
+    "note": "Standard PyTorch inference"
+  },
+  "vllm": {
+    "time": 12.45,
+    "throughput": 1038.45,
+    "note": "Optimized inference with PagedAttention"
+  },
+  "speedup": 3.63,
+  "configuration": {
+    "num_prompts": 100,
+    "prompt_length": 128,
+    "output_length": 128,
+    "gpu": "NVIDIA A100"
+  }
+}
