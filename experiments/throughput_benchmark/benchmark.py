@@ -10,11 +10,8 @@ import time
 from typing import List, Tuple
 import json
 import sys
-import os
 
-# Add parent directory to path for config import
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import Config
+from experiments.config import Config
 
 # Initialize configuration
 config = Config()
