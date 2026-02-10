@@ -6,7 +6,6 @@ Interactive web interface for testing the vLLM API server.
 
 import streamlit
 import requests
-import json
 import sys
 import os
 
