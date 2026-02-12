@@ -6,25 +6,19 @@ and vLLM for large language model serving.
 """
 
 import argparse
+import json
 import time
 from typing import List, Tuple
-import json
-import sys
+
+import torch
+from matplotlib import pyplot
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from vllm import LLM, SamplingParams
 
 from experiments.config import Config
 
 # Initialize configuration
 config = Config()
-
-try:
-    import torch
-    from transformers import AutoTokenizer, AutoModelForCausalLM
-    from vllm import LLM, SamplingParams
-    from matplotlib import pyplot
-except ImportError as e:
-    print(f"Missing dependency: {e}")
-    print("Install required packages: uv pip install -e .")
-    sys.exit(1)
 
 
 def generate_prompts(tokenizer, num_prompts: int, prompt_length: int) -> List[str]:
