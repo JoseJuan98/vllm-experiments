@@ -3,15 +3,10 @@ Streamlit UI for OpenAI-compatible API Server
 
 Interactive web interface for testing the vLLM API server.
 """
-
-import streamlit
 import requests
-import sys
-import os
+import streamlit
 
-# Add parent directory to path for config import
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import Config
+from experiments.config import Config
 
 # Initialize configuration
 config = Config()

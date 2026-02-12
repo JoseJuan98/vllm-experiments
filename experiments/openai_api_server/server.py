@@ -5,24 +5,14 @@ This module provides an OpenAI-compatible API server for serving LLMs with vLLM.
 """
 
 import argparse
-import sys
-import os
 
-# Add parent directory to path for config import
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import Config
+import uvicorn
+from vllm.entrypoints.openai.api_server import run_server
+
+from experiments.config import Config
 
 # Initialize configuration
 config = Config()
-
-try:
-    from vllm.entrypoints.openai.api_server import run_server
-    import uvicorn
-except ImportError as e:
-    print(f"Missing dependency: {e}")
-    print("Install required packages: pip install vllm uvicorn")
-    sys.exit(1)
-
 
 def main():
     parser = argparse.ArgumentParser(
