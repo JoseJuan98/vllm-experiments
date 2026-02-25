@@ -1,0 +1,35 @@
+{
+  "title": "Sample Memory Optimization Report",
+  "model": "meta-llama/Llama-2-7b-hf",
+  "date": "2026-02-10",
+  "results": [
+    {
+      "method_name": "None (FP16)",
+      "quantization": "none",
+      "allocated_memory_gb": 13.48,
+      "reserved_memory_gb": 14.20,
+      "peak_memory_gb": 14.35
+    },
+    {
+      "method_name": "AWQ",
+      "quantization": "awq",
+      "allocated_memory_gb": 3.52,
+      "reserved_memory_gb": 4.10,
+      "peak_memory_gb": 4.25
+    }
+  ],
+  "summary": {
+    "baseline_memory_gb": 13.48,
+    "quantized_memory_gb": 3.52,
+    "memory_savings_gb": 9.96,
+    "memory_savings_percent": 73.88
+  },
+  "inference_quality": {
+    "method": "Sample outputs comparison",
+    "note": "Minimal degradation observed in sample generations"
+  },
+  "hardware": {
+    "gpu": "NVIDIA A100 40GB",
+    "cuda_version": "12.1"
+  }
+}
