@@ -50,13 +50,16 @@ Install dependencies using uv:
 
 ```bash
 # Install uv if you haven't already
-curl -LsSf https://astral.sh/uv/install.sh | sh
+pip install --no-cache-dir uv
+
+# Create a virtual environment
+uv venv --python 3.13 --seed
 
 # Install all dependencies
-uv pip install -e .
+uv sync
 
 # For quantization experiments, install optional dependencies
-uv pip install -e ".[quantization]"
+uv sync --extra quantization
 ```
 
 Alternatively, you can use pip:
